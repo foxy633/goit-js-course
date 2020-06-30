@@ -1,28 +1,32 @@
 "use strict";
 
 const isUserChoice = prompt("Введите страну доставки товара:");
-let cost;
-switch (isUserChoice.toLowerCase()) {
-  case "китай":
-    cost = 100;
-    break;
-  case "чили":
-    cost = 250;
-    break;
-  case "австралия":
-    cost = 170;
-    break;
-  case "индия":
-    cost = 80;
-    break;
-  case "ямайка":
-    cost = 120;
-    break;
-}
-if (cost) {
-  alert(`Доставка в "${isUserChoice}" будет стоить ${cost} кредитов`);
+if (isUserChoice === null) {
+  alert("Отмена пользователем");
 } else {
-  alert(`В вашей стране доставка не доступна`);
+  let cost;
+  switch (isUserChoice.toLowerCase()) {
+    case "китай":
+      cost = 100;
+      break;
+    case "чили":
+      cost = 250;
+      break;
+    case "австралия":
+      cost = 170;
+      break;
+    case "индия":
+      cost = 80;
+      break;
+    case "ямайка":
+      cost = 120;
+      break;
+  }
+  if (cost) {
+    alert(`Доставка в "${isUserChoice}" будет стоить ${cost} кредитов`);
+  } else {
+    alert(`В вашей стране доставка не доступна`);
+  }
 }
 
 // const isChina = "Китай";

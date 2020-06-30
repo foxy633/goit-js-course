@@ -9,6 +9,6 @@ console.log(
 
 if (total >= ordered) {
   console.log("Заказ оформлен, с вами свяжется менеджер");
-} else if (total <= ordered) {
+} else if (total < ordered) {
   console.log("На складе недостаточно твоаров!");
 }
