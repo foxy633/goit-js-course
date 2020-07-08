@@ -7,6 +7,7 @@ const countTotalSalary = function (employees) {
     total += value;
   }
   return total;
+  // return Object.values(employees).reduce((accumulator, currentValue) => accumulator + currentValue, 0); изучить..////
 };
 
 console.log(countTotalSalary({})); // 0

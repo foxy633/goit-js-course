@@ -57,12 +57,11 @@ const account = {
     if (this.balance < amount) {
       console.log("Cнятие такой суммы не возможно, недостаточно средств");
       return this.balance;
-    } else {
-      let transaction = this.createTransaction(amount, Transaction.WITHDRAW);
-      this.transactions.push(transaction);
-      this.balance -= amount;
-      return this.balance;
     }
+    let transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+    this.transactions.push(transaction);
+    this.balance -= amount;
+    return this.balance;
   },
 
   /*
@@ -76,11 +75,12 @@ const account = {
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    for (let transaction of this.transactions) {
-      if (id === transaction["id"]) {
-        return transaction;
-      }
-    }
+    // for (let transaction of this.transactions) {
+    //   if (id === transaction["id"]) {
+    //     return transaction;
+    //   }
+    // }
+    this.transactions[id];
   },
 
   /*

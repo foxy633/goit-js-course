@@ -6,14 +6,23 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice = function (allProdcuts, productName) {
+const calculateTotalPrice2 = function (allProdcuts, productName) {
   for (let product of allProdcuts) {
     let key = "name";
     let name = product[key];
-    if (name === productName) {
+
+    if (product.name === productName) {
       let price = product["price"];
       let quantity = product["quantity"];
       return price * quantity;
+    }
+  }
+};
+
+const calculateTotalPrice = function (allProdcuts, productName) {
+  for (let product of allProdcuts) {
+    if (product.name === productName) {
+      return product["price"] * product["quantity"];
     }
   }
 };
