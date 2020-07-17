@@ -1,4 +1,7 @@
 "use strict";
+//лексическое окружение глобальное
+//родитель
+//все обьявления
 const products = [
   { name: "Радар", price: 1300, quantity: 4 },
   { name: "Сканер", price: 2700, quantity: 3 },
@@ -7,7 +10,13 @@ const products = [
 ];
 
 const calculateTotalPrice2 = function (allProdcuts, productName) {
+  //лексическое окружение обьекта/функции/цикло
+  //глобал
+  //все обьявления
   for (let product of allProdcuts) {
+    //лексическое окружение обьекта/функции/цикло
+    //calculateTotalPrice2
+    //все обьявления
     let key = "name";
     let name = product[key];
 
