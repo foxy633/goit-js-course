@@ -1,33 +1,73 @@
 "use strict";
 
-const isUserChoice = prompt("Введите страну доставки товара:");
-if (isUserChoice === null) {
+const China = "Китай";
+const costChina = 100;
+const Chile = "Чили";
+const costChile = 250;
+const Australia = "Австралия";
+const costAustralia = 170;
+const India = "Индия";
+const costIndia = 80;
+const Jamaika = "Ямайка";
+const costJamaica = 120;
+const UserChoice = prompt("Введите страну доставки товара:");
+
+if (UserChoice === null) {
   alert("Отмена пользователем");
 } else {
-  let cost;
-  switch (isUserChoice.toLowerCase()) {
-    case "китай":
-      cost = 100;
+  switch (UserChoice.toLowerCase()) {
+    case China.toLowerCase():
+      console.log(`Доставка в "${China}" будет стоить "${costChina}" кредитов`);
       break;
-    case "чили":
-      cost = 250;
+    case Chile.toLowerCase():
+      console.log(`Доставка в "${Chile}" будет стоить "${costChile}" кредитов`);
       break;
-    case "австралия":
-      cost = 170;
+    case Australia.toLowerCase():
+      console.log(
+        `Доставка в "${Australia}" будет стоить "${costAustralia}" кредитов`
+      );
       break;
-    case "индия":
-      cost = 80;
+    case India.toLowerCase():
+      console.log(`Доставка в "${India}" будет стоить "${costIndia}" кредитов`);
       break;
-    case "ямайка":
-      cost = 120;
+    case Jamaika.toLowerCase():
+      console.log(
+        `Доставка в "${Jamaika}" будет стоить "${costJamaica}" кредитов`
+      );
       break;
-  }
-  if (cost) {
-    alert(`Доставка в "${isUserChoice}" будет стоить ${cost} кредитов`);
-  } else {
-    alert(`В вашей стране доставка не доступна`);
+    default:
+      alert(`В вашей стране доставка не доступна`);
   }
 }
+
+// const isUserChoice = prompt("Введите страну доставки товара:");
+// if (isUserChoice === null) {
+//   alert("Отмена пользователем");
+// } else {
+//   let cost;
+//   switch (isUserChoice.toLowerCase()) {
+//     case "китай":
+//       cost = 100;
+//       break;
+//     case "чили":
+//       cost = 250;
+//       break;
+//     case "австралия":
+//       cost = 170;
+//       break;
+//     case "индия":
+//       cost = 80;
+//       break;
+//     case "ямайка":
+//       cost = 120;
+//       break;
+//   }
+//   if (cost) {
+//     alert(`Доставка в "${isUserChoice}" будет стоить ${cost} кредитов`);
+//   } else {
+//     alert(`В вашей стране доставка не доступна`);
+//   }
+// }
 
 // const isChina = "Китай";
 // const isChile = "Чили";

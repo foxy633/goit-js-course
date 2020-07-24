@@ -2,16 +2,16 @@
 
 const credits = 23580;
 const pricePerDroid = 3000;
-let totalPrice;
-let message;
+// let totalPrice;
+// let message;
 
-message = prompt("Какое количество дроидов Вы хотите купить?");
+const message = prompt("Какое количество дроидов Вы хотите купить?");
 if (message === null) {
   console.log("Отменено пользователем!");
-} else if (!Number(message)) {
+} else if (Number.isNaN(Number(message))) {
   console.log("Вы ввели не число!");
 } else {
-  totalPrice = message * pricePerDroid;
+  const totalPrice = message * pricePerDroid;
   if (credits < totalPrice) {
     console.log("Недостаточно средств на счету!");
   } else {
