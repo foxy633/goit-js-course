@@ -8,9 +8,9 @@ const findBestEmployee = function (employees) {
       bestValue = value;
     }
   }
-  const keys = Object.keys(employees);
+  // const keys = Object.keys(employees);
   const bestName = [];
-  for (let key of keys) {
+  for (const key in employees) {
     let value = employees[key];
     if (value === bestValue) {
       bestName.push(`${key}: ${bestValue}`);
@@ -19,18 +19,18 @@ const findBestEmployee = function (employees) {
   return bestName.join(", ");
 };
 
-const findBestEmployee2 = function (employees) {
-  const arrey = Object.entries(employees);
-  let bestWork = -Infinity;
-  let bestName;
-  for (let element of arrey) {
-    if (element[1] > bestWork) {
-      bestWork = element[1];
-      bestName = element[0];
-    }
-  }
-  return bestName;
-};
+// const findBestEmployee = function (employees) {
+//   const arrey = Object.entries(employees);
+//   let bestWork = -Infinity;
+//   let bestName;
+//   for (let element of arrey) {
+//     if (element[1] > bestWork) {
+//       bestWork = element[1];
+//       bestName = element[0];
+//     }
+//   }
+//   return bestName;
+// };
 
 console.log(
   findBestEmployee({

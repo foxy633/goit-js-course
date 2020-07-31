@@ -15,20 +15,25 @@ const Transaction = {
 const account = {
   balance: 0,
   transactions: [],
-  nextId: 0,
+  // nextId: 0,
 
   /*
    * Метод создает и возвращает объект транзакции.
    * Принимает сумму и тип транзакции.
    */
   createTransaction(amount, type) {
-    let transaction = {
-      id: this.nextId,
+    // let transaction = {
+    // id: this.nextId,
+    // type: type,
+    // amount: amount,
+    // };
+    // this.nextId++;
+    // return transaction;
+    return {
+      id: this.transactions.length + 1,
       type: type,
       amount: amount,
     };
-    this.nextId++;
-    return transaction;
   },
 
   /*
@@ -75,12 +80,13 @@ const account = {
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    // for (let transaction of this.transactions) {
-    //   if (id === transaction["id"]) {
-    //     return transaction;
-    //   }
-    // }
-    this.transactions[id];
+    for (let transaction of this.transactions) {
+      if (id === transaction["id"]) {
+        return transaction;
+      }
+    }
+    // transactions -> transaction -> id
+    // return this.transactions[id];
   },
 
   /*
@@ -88,13 +94,13 @@ const account = {
    * определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
-    let arrey = [];
+    let fundsByTransactionType = [];
     for (let transaction of this.transactions) {
       if (type === transaction["type"]) {
-        arrey.push(transaction);
+        fundsByTransactionType.push(transaction);
       }
     }
-    return arrey;
+    return fundsByTransactionType;
   },
 };
 console.log(account.getBalance());

@@ -33,10 +33,9 @@ const getAllPropValues1 = function (arr, prop) {
 
 const getAllPropValues = function (arr, prop) {
   let array = [];
-  let key = prop;
   for (let obj of arr) {
-    if (obj.hasOwnProperty(key)) {
-      array.push(obj[key]);
+    if (prop in obj) {
+      array.push(obj[prop]);
     }
   }
   return array;

@@ -9,29 +9,20 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice2 = function (allProdcuts, productName) {
-  //лексическое окружение обьекта/функции/цикло
-  //глобал
-  //все обьявления
-  for (let product of allProdcuts) {
-    //лексическое окружение обьекта/функции/цикло
-    //calculateTotalPrice2
-    //все обьявления
-    let key = "name";
-    let name = product[key];
-
-    if (product.name === productName) {
-      let price = product["price"];
-      let quantity = product["quantity"];
-      return price * quantity;
-    }
-  }
-};
+// const calculateTotalPrice = function (allProdcuts, productName) {
+//   for (let product of allProdcuts) {
+//     if (product.name === productName) {
+//       let price = product["price"];
+//       let quantity = product["quantity"];
+//       return price * quantity;
+//     }
+//   }
+// };
 
 const calculateTotalPrice = function (allProdcuts, productName) {
   for (let product of allProdcuts) {
     if (product.name === productName) {
-      return product["price"] * product["quantity"];
+      return product.price * product.quantity;
     }
   }
 };
