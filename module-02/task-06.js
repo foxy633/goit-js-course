@@ -4,19 +4,31 @@ let input;
 const numbers = [];
 let total = 0;
 
-input = prompt("Введите число:");
-while (input !== null) {
-  if (!Number(input)) {
+do {
+  input = prompt("Введите число:");
+
+  if (Number.isNaN(input)) {
     alert("Было введено не число, попробуйте еще раз");
   } else {
-    numbers.push(Number.parseInt(input));
+    numbers.push(+input);
   }
-  input = prompt("Введите число:");
-}
+} while (input !== null);
 
-console.log(numbers);
+// input = prompt("Введите число:");
+// while (input !== null) {
+//   if (!Number(input)) {
+//     alert("Было введено не число, попробуйте еще раз");
+//   } else {
+//     numbers.push(Number.parseInt(input));
+//   }
+//   input = prompt("Введите число:");
+// }
 
-for (let number of numbers) {
-  total += number;
+// console.log(numbers);
+
+if (numbers.length > 0) {
+  for (let number of numbers) {
+    total += number;
+  }
 }
 alert(`Общая сумма чисел равна ${total}`);

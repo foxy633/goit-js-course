@@ -1,19 +1,23 @@
 "use strict";
 
 const formatString = function (string) {
-  if (string.length <= 40) {
-    return string;
-  } else {
-    let formattedString = "";
-    for (let i = 0; i < 40; i += 1) {
-      let character = string.charAt(i);
-      formattedString += character;
-    }
-    formattedString += "...";
-
-    return formattedString;
-  }
+  return string.length <= 40 ? string : string.slice(0, 40) + "...";
 };
+
+// const formatString = function (string) {
+//   if (string.length <= 40) {
+//     return string;
+//   } else {
+//     let formattedString = "";
+//     for (let i = 0; i < 40; i += 1) {
+//       let character = string.charAt(i);
+//       formattedString += character;
+//     }
+//     formattedString += "...";
+
+//     return formattedString;
+//   }
+// };
 
 console.log(formatString("Curabitur ligula sapien, tincidunt non."));
 // вернется оригинальная строка

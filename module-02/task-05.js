@@ -2,13 +2,14 @@
 
 const checkForSpam = function (message) {
   message = message.toLowerCase();
-  if (message.indexOf("spam") !== -1) {
-    return true;
-  } else if (message.indexOf("sale") !== -1) {
-    return true;
-  } else {
-    return false;
-  }
+  return message.includes("spam") || message.includes("sale");
+  // if (message.indexOf("spam") !== -1) {
+  //   return true;
+  // } else if (message.indexOf("sale") !== -1) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 };
 
 console.log(checkForSpam("Latest technology news")); // false
