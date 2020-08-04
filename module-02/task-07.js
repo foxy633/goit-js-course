@@ -3,21 +3,22 @@
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 const isLoginValid = function (login) {
-  if (login.length >= 4 && login.length <= 16) {
-    return true;
-  } else {
-    return false;
-  }
+  return login.lenght >= 4 && login.lenght <= 16;
+  // if (login.length >= 4 && login.length <= 16) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 };
 
-const isLoginUnique = function (allLogins, login) {
-  for (let UserLogin of allLogins) {
-    if (UserLogin === login) {
-      return false;
-    }
-  }
-
-  return true;
+const isLoginUnique = function (allLiogins, login) {
+  return !allLiogins.includes(login);
+  // for (let UserLogin of allLiogins) {
+  //   if (UserLogin === login) {
+  //     return false;
+  //   }
+  // }
+  // return true;
 };
 
 const addLogin = function (allLogins, login) {

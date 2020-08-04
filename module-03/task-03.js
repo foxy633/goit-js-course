@@ -1,14 +1,12 @@
 "use strict";
 
 const findBestEmployee = function (employees) {
-  const values = Object.values(employees);
   let bestValue = 0;
-  for (let value of values) {
-    if (bestValue < value) {
-      bestValue = value;
+  for (let key in employees) {
+    if (bestValue < employees[key]) {
+      bestValue = employees[key];
     }
   }
-  // const keys = Object.keys(employees);
   const bestName = [];
   for (const key in employees) {
     let value = employees[key];
