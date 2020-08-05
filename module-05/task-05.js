@@ -2,20 +2,25 @@
 class Car {
   static getSpecs(car) {
     console.log(
-      "maxSpeed:" +
-        car._maxSpeed +
-        "," +
-        "speed:" +
-        car._speed +
-        "," +
-        "isOn:" +
-        car._isOn +
-        "," +
-        "distance:" +
-        car._distance +
-        "," +
-        "price:" +
-        car._price
+      // "maxSpeed:" +
+      //   car._maxSpeed +
+      //   "," +
+      //   "speed:" +
+      //   car._speed +
+      //   "," +
+      //   "isOn:" +
+      //   car._isOn +
+      //   "," +
+      //   "distance:" +
+      //   car._distance +
+      //   "," +
+      //   "price:" +
+      //   car._price
+      `maxSpeed:${car._maxSpeed}, 
+        speed:${car._speed},
+        isOn:${car._isOn},
+        distance:${car._distance},
+        price: ${car._price}`
     );
   }
   /*
