@@ -2,19 +2,23 @@
 
 const findBestEmployee = function (employees) {
   let bestValue = 0;
+  let bestName;
   for (let key in employees) {
     if (bestValue < employees[key]) {
       bestValue = employees[key];
+      bestName = key;
     }
   }
-  const bestName = [];
-  for (const key in employees) {
-    let value = employees[key];
-    if (value === bestValue) {
-      bestName.push(`${key}: ${bestValue}`);
-    }
-  }
-  return bestName.join(", ");
+  return bestName;
+
+  // const bestName = [];
+  // for (const key in employees) {
+  //   let value = employees[key];
+  //   if (value === bestValue) {
+  //     bestName.push(`${key}: ${bestValue}`);
+  //   }
+  // }
+  // return bestName;
 };
 
 // const findBestEmployee = function (employees) {
@@ -32,7 +36,7 @@ const findBestEmployee = function (employees) {
 
 console.log(
   findBestEmployee({
-    ann: 99,
+    ann: 29,
     david: 35,
     helen: 1,
     lorence: 99,

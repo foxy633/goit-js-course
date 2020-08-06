@@ -61,6 +61,7 @@ const account = {
   withdraw(amount) {
     if (this.balance < amount) {
       console.log("Cнятие такой суммы не возможно, недостаточно средств");
+      return;
       // return this.balance;
     }
     let transaction = this.createTransaction(amount, Transaction.WITHDRAW);
@@ -94,13 +95,13 @@ const account = {
    * определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
-    let fundsByTransactionType = [];
+    let total = 0;
     for (let transaction of this.transactions) {
       if (type === transaction.type) {
-        fundsByTransactionType.push(transaction);
+        total += transaction.amount;
       }
     }
-    return fundsByTransactionType;
+    return total;
   },
 };
 console.log(account.getBalance());
