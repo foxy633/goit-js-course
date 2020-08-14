@@ -25,6 +25,10 @@ const getUsersWithEyeColor = (users, color) => {
 console.log(getUsersWithEyeColor(users, "blue")); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 //Получить массив имен пользователей по полу (поле gender).
 const getUsersWithGender = (users, gender) => {
+  return users
+    .filter((user) => user.gender === gender)
+    .map((user) => (user = user.name));
+
   // твой код
   // const userGender = [];
   // const fun = function (user) {
@@ -50,12 +54,12 @@ const getUsersWithGender = (users, gender) => {
   //   return acc;
   // };
 
-  return users.reduce((acc, user) => {
-    if (user.gender === gender) {
-      acc.push(user.name);
-    }
-    return acc;
-  }, []);
+  // return users.reduce((acc, user) => {
+  //   if (user.gender === gender) {
+  //     acc.push(user.name);
+  //   }
+  //   return acc;
+  // }, []);
 };
 
 console.log(getUsersWithGender(users, "male")); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
