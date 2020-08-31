@@ -2,9 +2,6 @@
 import galleryItems from "./gallery-items.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // console.log(galleryItems);
-  // console.log(document);
-
   const refs = {
     modal: document.querySelector("div.lightbox"),
     modalImg: document.querySelector("img.lightbox__image"),
