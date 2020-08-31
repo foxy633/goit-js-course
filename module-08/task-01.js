@@ -1,6 +1,6 @@
 "use strict";
 import galleryItems from "./gallery-items.js";
-
+//
 document.addEventListener("DOMContentLoaded", () => {
   const refs = {
     modal: document.querySelector("div.lightbox"),
