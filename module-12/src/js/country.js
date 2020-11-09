@@ -7,14 +7,17 @@ import countryList from '../templates/templatesManyCoutry.hbs';
 import '@pnotify/core/dist/BrightTheme.css';
 const { error } = require('@pnotify/core');
 var debounce = require('lodash.debounce');
+//import debounce from 'lodash.debounce';
 
 refs.searchForm.addEventListener('input', debounce(countrySearchInput, 500));
 
-function countrySearchInput(elem) {
-  elem.preventDefault();
+function countrySearchInput(e) {
+  e.preventDefault();
   clearContainer();
-  const searchQuery = elem.target.value;
-
+  const searchQuery = e.target.value;
+  if (searchQuery === '') {
+    return;
+  }
   countrySearch
     .fetchCountrries(searchQuery)
     .then(data => {
@@ -35,9 +38,17 @@ function countrySearchInput(elem) {
           addClass: 'myPnotify',
         });
       } else if (data.length === 1) {
-        buildList(data, oneCountry);
+        //buildList(data, oneCountry);
+        refs.articlesContainer.insertAdjacentHTML(
+          'afterbegin',
+          oneCountry(data[0]),
+        );
       } else if (data.length <= 10) {
-        buildList(data, countryList);
+        refs.articlesContainer.insertAdjacentHTML(
+          'afterbegin',
+          countryList(data),
+        );
+        //buildList(data, countryList);
       }
     })
     .catch(Error => {
@@ -49,10 +60,10 @@ function countrySearchInput(elem) {
     });
 }
 
-function buildList(countryes, template) {
-  const list = countryes.map(count => template(count)).join();
-  refs.articlesContainer.insertAdjacentHTML('afterbegin', list);
-}
+// function buildList(countryes, template) {
+//   const list = countryes.map(count => template(count)).join();
+//   refs.articlesContainer.insertAdjacentHTML('afterbegin', list);
+// }
 
 function clearContainer() {
   refs.articlesContainer.innerHTML = '';
