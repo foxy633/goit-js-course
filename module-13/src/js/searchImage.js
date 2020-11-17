@@ -24,11 +24,16 @@ function searchImageInputHandler(event) {
 function loadMoreBtnHandler() {
   servise.fetchArticles().then(hits => {
     const markup = buildListTamplate(hits);
+    const lastFoto = refs.gallery.lastElementChild;
     insertList(markup);
-    window.scrollTo({
-      top: 1000,
+    lastFoto.nextElementSibling.scrollIntoView({
       behavior: 'smooth',
+      block: 'start',
     });
+    // window.scrollTo({
+    //   top: 1000,
+    //   behavior: 'smooth',
+    // });
   });
 }
 
